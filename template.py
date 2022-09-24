@@ -1,4 +1,6 @@
 import os
+'''Creating the basic directories and files for the project '''
+
 
 dirs = [
     os.path.join("data","raw"),
