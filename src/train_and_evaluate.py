@@ -63,6 +63,7 @@ def train_and_evaluate(config_path):
     scores_file = config["reports"]["scores"]
     params_file = config["reports"]["params"]
 
+
     with open(scores_file, "w") as f:
         scores = {
             "rmse": rmse,
@@ -78,15 +79,12 @@ def train_and_evaluate(config_path):
         }
         json.dump(params, f, indent=4)
 
-#####################################################
 
 
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, "model.joblib")
 
     joblib.dump(lr, model_path)       
-
-
 
 
 

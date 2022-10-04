@@ -10,6 +10,7 @@ from get_data import read_params
 
 
 def split_and_saved_data(config_path):
+    
     config = read_params(config_path)
     test_data_path = config["split_data"]["test_path"]
     train_data_path = config["split_data"]["train_path"]
