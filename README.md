@@ -21,11 +21,47 @@ Download the data from "https://www.kaggle.com/datasets/sh6147782/winequalityred
 ```
 git init
 ```
-
+```
 dvc init
-
+```
+```
 dvc add data_given/winequality.csv
+```
 
+```
 git add .
-
+```
+```
 git commit -m "first commit"
+```
+```
+git add . && git commit -m "update Readme.md"
+```
+
+```
+git remote add origin https://github.com/c17hawke/simple-dvc-demo.git
+git branch -M main
+git push origin main
+```
+tox command -
+```
+tox
+```
+for rebuilding
+```
+tox -r
+```
+pytest command
+```
+pytest -v
+```
+
+ssetup commands -
+```
+pip install -e .
+```
+
+build your own package commands
+```
+python setup.py sdist bdist wheel
+```
