@@ -4,4 +4,4 @@ sklearn
 pandas
 numpy
 pytest
-tox-pyt
+tox

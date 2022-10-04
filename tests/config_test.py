@@ -1,6 +1,4 @@
 
-#from pyrsistent import b
-
 
 def test_genric():
     a = 2
