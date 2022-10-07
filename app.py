@@ -1,5 +1,3 @@
-from distutils.command.config import config
-from re import template
 from flask import Flask, render_template, request, jsonify
 import os
 import yaml
@@ -12,7 +10,7 @@ webapp_root = "webapp"
 static_dir = os.path.join(webapp_root, "static")
 template_dir = os.path.join(webapp_root, "Templates")
 
-app = Flask(__name__, static_folder = "/sample project/webapp/static", template_folder="/sample project/webapp/templates")
+app = Flask(__name__, static_folder = static_dir, template_folder=template_dir)
 
 def read_params(config_path):
     with open(config_path) as yaml_file:
@@ -62,4 +60,4 @@ def index():
 
 if __name__ =='__main__':
 
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host="0.0.0.0", port= 5000 ,debug=True)
