@@ -7,7 +7,7 @@ import json
 import joblib
 import numpy as np
 
-params_path = "param.yaml"
+params_path = "params.yaml"
 schema_path = os.path.join("prediction_service", "schema_in.json")
 
 class NotInRange(Exception):
@@ -22,14 +22,14 @@ class NotInCols(Exception):
 
 def read_params(config_path=params_path):
     with open(config_path) as yaml_file:
-        config = yaml.safe_load(config_path)
+        config = yaml.safe_load(yaml_file)
     return config
 
 def predict(data):
     config = read_params(params_path)
     model_dir_path = config["webapp_model_dir"]
     model = joblib.load(model_dir_path)
-    prediction = model.predict(data).to_list()[0]
+    prediction = model.predict(data)[0]
 
     try:
         if 3 <= prediction <= 8:
