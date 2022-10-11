@@ -2,7 +2,6 @@
 # train algo
 # save the metrics, params
 import os
-from urllib.parse import urlparse
 import warnings
 import argparse
 import joblib
@@ -16,6 +15,11 @@ from sklearn.linear_model import ElasticNet
 from get_data import read_params
 from urllib.parse import urlparse
 import mlflow
+
+import logging
+
+logging.basicConfig(level=logging.WARN)
+logger = logging.getLogger(__name__)
 
 def eval_metrics(actual, predicted):
     rmse =  np.sqrt(mean_squared_error(actual, predicted))
